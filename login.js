@@ -1,18 +1,11 @@
 let nameInput='',pass='';
 let username ='';
-// const submit = document.querySelector('button');
 const register = document.getElementById('register');
 const login = document.getElementById('login');
 const bt = document.querySelectorAll('.bt');
 const loginpage = document.querySelector('.login');
 const registerpage = document.querySelector('.register');
 const regsuccess = document.querySelector('.regsuccess');
-
-// const newHandle = window.showSaveFilePicker();
-
-// // create a FileSystemWritableFileStream to write to
-// const writableStream = newHandle.createWritable();
-h.insert('h','h','h');
 
 bt.forEach(btn=>btn.addEventListener('click',()=>{
     loginpage.classList.toggle('displaynone');
@@ -31,20 +24,16 @@ login.addEventListener('click',()=>{
 
     if(username!='' && pass!='') {
         h.search(username,pass);
-        console.log(username,pass);
-        console.log(table);
+        // console.log(username,pass);
+        // console.log(table);
     }
     else alert('Enter All Fields')
+    console.log(table[385])
 })
 
 
 
 document.addEventListener('DOMContentLoaded',()=>{
-    // fetch('./MOCK_DATA.json')
-    // .then(resp=>{console.log(1)})
-    // .then(data=>{obj = data;
-    // console.log(data)})
-    // console.log(data);
     for(let i=0;i<data.length;i++)
     {   
         // console.log(data[i].nameInput);
@@ -68,12 +57,12 @@ register.addEventListener('click',()=>{
     pass = localStorage.getItem('pass');
 
     if(nameInput!='' && username!='' && pass!='') {
-        h.insert(nameInput,username,pass);
-        data.push({"nameInput":name,"username":username,"password":pass});
-        localStorage.setItem('data',data);
-        data = localStorage.getItem('data');
-        console.log(nameInput,username,pass);
-        console.log(table);
+        if(h.insert(nameInput,username,pass)){
+            regsuccess.innerHTML='<h2>Registered Successfully!</h2>';
+            setTimeout(()=>{regsuccess.innerHTML=''},1500);
+        }
+        // console.log(nameInput,username,pass);
+        // console.log(table);
     }
     else alert('Enter All Fields')
 })

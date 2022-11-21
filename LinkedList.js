@@ -31,16 +31,14 @@ class Linkedlist{
                     current = current.next
                 }
                 current.next = node;
-                regsuccess.innerHTML='<h2>Registered Successfully!</h2>';
-                setTimeout(()=>{regsuccess.innerHTML=''},1500);
             }
             else {
                 alert('Username Taken!');
-                return;
+                return 0;
             }
         }
         this.count++;
-        return;
+        return 1;
     }
 
     search(username){
