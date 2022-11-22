@@ -57,8 +57,8 @@ class Linkedlist{
             if(current.username==username) break;
             current=current.next;
         }while(current!=null)
-        console.log(username+":"+current.username);
-        console.log(password+":"+current.password);
+        // console.log(username+":"+current.username);
+        // console.log(password+":"+current.password);
         if(current.password==password) return 1;
         return 0;
     }

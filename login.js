@@ -28,7 +28,6 @@ login.addEventListener('click',()=>{
         // console.log(table);
     }
     else alert('Enter All Fields')
-    console.log(table[385])
 })
 
 
